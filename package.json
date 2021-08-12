@@ -1,0 +1,51 @@
+{
+    "name": "WillDaDill",
+    "version": "1.0.0",
+    "description": "Compiler",
+    "main": "gulpfile.js",
+    "scripts": {
+        "gulp": "gulp",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {},
+    "author": "Waldir Bolanos && Cris Lombardo",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.8.4",
+        "@babel/preset-env": "^7.8.4",
+        "@fullhuman/postcss-purgecss": "^4.0.3",
+        "autoprefixer": "^9.7.4",
+        "browser-sync": "^2.26.7",
+        "cssnano": "^5.0.7",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-changed": "^3.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-connect-php": "^1.0.3",
+        "gulp-debug": "^3.2.0",
+        "gulp-htmlmin": "5.0.1",
+        "gulp-if": "^3.0.0",
+        "gulp-load-plugins": "^2.0.1",
+        "gulp-notify": "^3.2.0",
+        "gulp-plumber": "1.2.1",
+        "gulp-postcss": "^9.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-sass": "^5.0.0",
+        "node-sass": "^6.0.1",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-svgo": "^2.1.1",
+        "gulp-tinypng-compress": "^1.2.5",
+        "gulp-uglify": "^3.0.2",
+        "path": "^0.12.7",
+        "postcss-combine-media-query": "^1.0.0"
+    },
+    "browserslist": [
+        "last 3 version",
+        "> 1%",
+        "IE 11"
+    ],
+    "dependencies": {
+        "vinyl-fs": "^0.3.14"
+    }
+}
