@@ -139,14 +139,12 @@ h1, h2{
 
     img {
         width: 25px;
-        margin: 10px;
     }
 
     @include media-breakpoint-up(lg){
 
         img {
             width: 40px;
-            margin: 10px;
         }
 
     }
