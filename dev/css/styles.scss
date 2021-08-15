@@ -25,6 +25,12 @@ $red: #c00;
 @import "scss/reboot";
 @import "scss/type";
 @import "scss/buttons";
+@import "scss/card";
+@import "scss/nav";
+@import "scss/list-group";
+
+@import "scss/helpers/colored-links";
+
 
 // @import "scss/images";
 @import "scss/containers";
@@ -35,13 +41,13 @@ $red: #c00;
 
 
 
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+// *,
+// *::after,
+// *::before {
+//     box-sizing: border-box;
+//     margin: 0;
+//     padding: 0;
+// }
 
 // ********************
 // * Globals
@@ -98,8 +104,14 @@ body{
 
 }
 
-h1, h2{
+.font-chizel{
     font-family: 'Cinzel', serif;
+}
+
+header{
+    h1, h2{
+        @extend .font-chizel;
+    }
 }
 
 // .container {
@@ -127,10 +139,10 @@ h1, h2{
 
 .video-container{
     iframe{
+        width: 100%;
 
         @include media-breakpoint-up(lg){
-            width: 60%;
-            height: 400px;
+            // height: 400px;
         }
     }
 }
