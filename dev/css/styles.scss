@@ -27,7 +27,12 @@ $red: #c00;
 @import "scss/buttons";
 @import "scss/card";
 @import "scss/nav";
+@import "scss/navbar";
 @import "scss/list-group";
+@import "scss/transitions";
+@import "scss/images";
+
+
 
 @import "scss/helpers/colored-links";
 
@@ -53,6 +58,8 @@ $red: #c00;
 // * Globals
 // ********************
 
+$d-array: inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, none;
+
 .preloader{
     background-color: #000000;
     position: fixed;
@@ -62,22 +69,20 @@ $red: #c00;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
+    transition: opacity 5s ease-out;
 
     img{
         width: 250px;
-        opacity: 1;
+        opacity: 0;
         animation: 2s linear infinite preloaderAni;
     }
 
     &.on{
         opacity: 0;
-        transition: opacity 0.5s ease-out 1s;
         pointer-events: none;
 
         img{
-            opacity: 0;
-            transition: opacity 1s ease-out;
             animation: none;
         }
     }
@@ -109,11 +114,46 @@ body{
 }
 
 header{
-    h1, h2{
-        @extend .font-chizel;
+    background-color: #000000;
+    @extend .font-chizel;
+    font-weight: bold;
+
+    .header-copy{
+        color: #ffffff;
+    }
+
+    &.on{
+        // background-color: #ffffff;
+        transition: background-color 1s;
+
+        .header-copy{
+            color: #000000;
+        }
+    }
+
+    img{
+        @include media-breakpoint-up(md){
+            width: auto !important;
+            // flex: 1 1 auto !important;
+        }
     }
 }
 
+.section:not(.active-section) {
+    display: none !important;
+}
+
+.mega-h1{
+    @include media-breakpoint-up(md){
+        font-size: $font-size-base * 2;
+    }
+    @include media-breakpoint-up(lg){
+        font-size: $font-size-base * 3;
+    }
+    @include media-breakpoint-up(xl){
+        font-size: $font-size-base * 4;
+    }
+}
 // .container {
 
 //     width: 100%;
@@ -137,6 +177,18 @@ header{
     }
 }
 
+#hype {
+
+    iframe {
+        min-height: 200px;
+
+        @include media-breakpoint-up(lg){
+            // height: 400px;
+            min-height: 400px;
+        }
+    }
+}
+
 .video-container{
     iframe{
         width: 100%;
@@ -156,11 +208,76 @@ header{
     @include media-breakpoint-up(lg){
 
         img {
-            width: 40px;
+            width: 30px;
         }
 
     }
 
+}
+
+
+// Animations
+
+.blackoverlay{
+    // background: #000000;
+    will-change: filter;
+    filter: brightness(0);
+    transition: filter 1.5s ease-out;
+
+    &.on{
+        filter:  brightness(100%);
+    }
+
+
+}
+
+.slideup {
+    transform: translate3d(0, 150%, 0);
+    will-change: transform;
+
+
+    &.on{
+        transform: translate3d(0, 0, 0);
+        transition: transform 1s ease-out;
+    }
+}
+
+.fadein {
+    will-change: opacity;
+    opacity: 0;
+
+    &.on{
+        opacity: 1;
+        transition: opacity 1s ease-out;
+    }
+}
+
+.slamin {
+    will-change: opacity, transform;
+
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.2s ease-out 0.4s, opacity 0.2s ease-out 0.4s;
+
+    &.on{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.maskdown{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    transition: height 1s ease-out;
+    will-change: height;
+
+
+    &.on {
+        height: 100%;
+    }
 }
 
 
